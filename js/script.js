@@ -3,32 +3,29 @@ const noteLength = document.querySelector('.note-length');
 const noteTitle = document.querySelector('.note-title');
 const addBtn = document.querySelector('.add');
 const textArea = document.querySelector('.text-area');
+const textContainer = document.querySelector('.textArea');
 const save = document.querySelector('#save');
 
 
 
 addBtn.addEventListener('click', () =>{
     textArea.style.display = 'block'
+    textContainer.style.display = 'block'
 })
 
 let note = []
 
-if (note) {
-    // textArea.value = text
-    note = `
-    <div class="note-container edit">
-      <div class="note-title"></div>
-    </div>
-    `
-}
 
-function addNote( text = "") {
+function addNote( text ) {
+  text = ''
   textArea.value = text
-  text = push(note)
+  text = push(note[noteTitle])
 }
 
 save.addEventListener('click', ()=> {
   addNote()
+  textArea.style.display = 'none'
+  textContainer.style.display = 'none'
   // console.log('saved')
 })
 
