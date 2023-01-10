@@ -15,11 +15,17 @@ addBtn.addEventListener('click', () =>{
 
 let note = []
 
+if (notes) {
+  note.forEach((note) =>{
+    addNote(note)
+  })
+}
 
 function addNote( text ) {
   text = ''
   textArea.value = text
   text = push(note[noteTitle])
+  addNote()
 }
 
 save.addEventListener('click', ()=> {
