@@ -22,16 +22,22 @@ if (notes) {
 }
 
 function addNote( text = '' ) {
-  const note = document.querySelector('note-title')
+  const note = document.createElement('div')
+  note.classList.add('note')
   textArea.value = text
   note.innerHTML = text
   text = push(notes)
 
+
+  textArea.addEventListener('input', (e) => {
+    const { value } = e.target.
+    note.innerHTML = value
+  })
   updateLoacalStorage()
 }
 
 function updateLoacalStorage() {
-  
+
 }
 
 
