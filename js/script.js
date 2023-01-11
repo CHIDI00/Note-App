@@ -24,7 +24,7 @@ if (notes) {
 function addNote( text ) {
   text = ''
   textArea.value = text
-  text = push(note[noteTitle])
+  text = push(note)
   addNote()
 }
 
@@ -40,35 +40,35 @@ save.addEventListener('click', ()=> {
 
 
 
-let textSpace = ""
-let notes = JSON.parse(localStorage.getItem('notes'))
+// let textSpace = ""
+// let notes = JSON.parse(localStorage.getItem('notes'))
 
-addBtn.addEventListener('click', () =>{
-    noteContainer.classList = textArea.style.display = 'block'
-    addNewNote();
-    // note_value.append('<div class="note-title">' + note_value + '</div>')
-})
+// addBtn.addEventListener('click', () =>{
+//     noteContainer.classList = textArea.style.display = 'block'
+//     addNewNote();
+//     // note_value.append('<div class="note-title">' + note_value + '</div>')
+// })
 
-if (notes) {
-    notes.forEach((note) => {
-        addNewNote(note)
-    })
-}
+// if (notes) {
+//     notes.forEach((note) => {
+//         addNewNote(note)
+//     })
+// }
 
-function addNewNote(text = "") {
-    const note = document.createElement("div")
-    note.classList.add("note");
+// function addNewNote(text = "") {
+//     const note = document.createElement("div")
+//     note.classList.add("note");
 
-    textArea.value = text;
-    noteTitle.innerHTML = marked(text) 
+//     textArea.value = text;
+//     noteTitle.innerHTML = marked(text) 
 
-    textArea.addEventListener("input", (e) => {
-        const { value } = e.target;
-        noteTitle.innerHTML = marked(value)
+//     textArea.addEventListener("input", (e) => {
+//         const { value } = e.target;
+//         noteTitle.innerHTML = marked(value)
 
-        updateLocalStorage()
-    })
-}
+//         updateLocalStorage()
+//     })
+// }
  
 
 
