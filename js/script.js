@@ -13,10 +13,10 @@ addBtn.addEventListener('click', () =>{
     textContainer.style.display = 'block'
 })
 
-let note = []
+let notes = JSON.parse(localStorage.getItem('note'));
 
 if (notes) {
-  note.forEach((note) =>{
+  notes.forEach((note) =>{
     addNote(note)
   })
 }
