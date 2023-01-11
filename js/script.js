@@ -21,19 +21,18 @@ if (notes) {
   })
 }
 
-function addNote( text ) {
-  text = ''
+function addNote( text = '' ) {
+  const note = document.querySelector('note-title')
   textArea.value = text
-  text = push(note)
-  addNote()
+  note.innerHTML = text
+  text = push(notes)
+
+  updateLoacalStorage()
 }
 
-save.addEventListener('click', ()=> {
-  addNote()
-  textArea.style.display = 'none'
-  textContainer.style.display = 'none'
-  // console.log('saved')
-})
+function updateLoacalStorage() {
+  
+}
 
 
 
