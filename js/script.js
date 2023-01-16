@@ -1,5 +1,5 @@
 const noteContainer = document.querySelector('.note-container');
-const noteLength = document.querySelector('.note-length');
+// const noteLength = document.querySelector('.note-length');
 const noteTitle = document.querySelector('.note-title');
 const addBtn = document.querySelector('.add');
 const textArea = document.querySelector('.text-area');
@@ -8,35 +8,56 @@ const save = document.querySelector('#save');
 const mainNote = document.querySelector('.note-main-container')
 
 
-// addBtn.addEventListener('click', () =>{
-//   if (textArea.value !== '') {
-
-//   }
-// })
+textArea.addEventListener('keyup', ()=>{
+  if (textArea.value !== '') {
+    addBtn.classList.add('active')
+  } else {
+    addBtn.classList.remove('active')
+  }
+})
 
 addBtn.addEventListener('click', () =>{
     textArea.style.display = 'block'
     textContainer.style.display = 'block'
 })
 
-save.addEventListener('click', () =>{
+save.addEventListener('click', (e) =>{
   textArea.style.display = 'none'
+  // if (e.target.classList.contains('hide')) {
+  //   e.target.parentElement.parentElement.toggle('hide')
+  // }
   if (textArea.value !== '') {
     let newItem = document.createElement('div');
     newItem.classList.add('note-container')
     newItem.innerHTML = `
-    <div class="note-title">
+        <div class="note-title">
             <P>${textArea.value}</P>
+            <i class="fa-solid fa-xmark"></i>
           </div>
        </div>
+      
     `
     mainNote.appendChild(newItem)
     textArea.value = ''
+
+    // noteContainer = textArea.value
+
   } else {
     alert('Please enter a note')
   }
 })
 
+mainNote.addEventListener('click', (e)=> {
+  if (e.target.classList.contains('fa-xmark')) {
+    e.target.parentElement.parentElement.remove()
+  }
+})
+
+let noteLength = 0
+
+
+// function editNote() {
+// }
 
 
 

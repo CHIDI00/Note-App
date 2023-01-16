@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     display: flex;
     justify-content: center;
@@ -13,7 +12,6 @@ body {
     font-family: 'Roboto', sans-serif;
 
 }
-
 .container {
     position: relative;
     width: 370px;
@@ -23,47 +21,44 @@ body {
     text-align: center;
     overflow: auto;
 }
-
 .container h1 {
     width: 100%;
-    width: 370px;
     padding: 15px;
     font-size: 2rem;
     text-align: left;
     background: black;
 }
-
 .note-main-container {
     width: 100%;
     height: 85%;
     background-color: rgb(0, 0, 0);
 }
-
 .note-container {
-    display: block;
+    display: flex;
     margin: auto;
     padding: 0 20px;
+    margin-bottom: 5px;
     width: 85%;
-    /* border-radius: 8px; */
+    text-align: center;
+    height: 70px;
     background-color: rgb(50, 50, 50);
     overflow: hidden;
 }
-
 .note-title {
-    display: block;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    gap: 100px;
     width: 100%;
     margin: auto;
     padding: 20px 0;
     background: transparent;
     border-bottom: 1px solid rgb(83, 82, 82);
 }
-
 .note-title p {
     margin: 0 20px;
     overflow: hidden;
-    
+    text-align: center;
 }
-
  .add-note {
     position: absolute;
     display: flex;
@@ -76,23 +71,25 @@ body {
     background: rgb(59, 59, 59);
     z-index: 1;
 }
-
 .add-note p{
     text-align: right;
     font-size: 15px;
 }
-
 .add-note .add {
     color: orange;
     cursor: pointer;
+    font-size: 18px;
+    opacity: 1;
 }
-
-
+.add-note .add.active:hover {
+    opacity: .6;
+}
 textarea {
     display: none;
     position: absolute;
-    top: 18%;
-    left: 200px;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 370PX;
     height: 73%;
     border: none;
@@ -104,7 +101,6 @@ textarea {
     resize: none;
     cursor:text;
 }
-
 .fa-regular {
     position: absolute;
     top: 25px;
@@ -114,3 +110,15 @@ textarea {
     cursor: pointer;
 }
 
+
+@media (max-width: 425) {
+    .container {
+        max-width: 100%;
+        height: 100vh;
+    }
+
+    .note-main-container {
+        width: 100%;
+        height: 85%;
+    }
+}
